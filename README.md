@@ -1,13 +1,14 @@
 # D_BOSS_2BE03
 #TEAM LEADER NAME : DIGESH K G
 #TEAM MEMBERS DETAILS : HARSHITH R   ,2102508042
-                        PRAVEEN V    ,2082508187
+                        DEVRAJ       ,2082508074
                         DAKSHITH T M ,2102508155
                         DANISH S     ,2082508066
                         DIGESH K G   ,2102508236
 #PREOJECT_TITLE:
-       HEALTHY-FITTNESS
+       
 #PROJECT DISCREPTION:
-Healthy Fitness is your all-in-one personal wellness companion designed to help you build a stronger, healthier, and more balanced lifestyle. Whether you're a beginner taking your first steps toward better health or an athlete pushing your limits, Healthy Fitness provides personalized workout plans, nutrition tracking, and progress monitoring — all in one place.
-Stay motivated with daily fitness goals, guided exercises, and real-time performance insights that keep you on track toward achieving your dream body and optimal well-being. With an intuitive interface and science-backed routines, transforming your health has never been easier.
-Your journey to a healthier you starts here.
+Cluster One SVU is your premier student community hub at S-vyasa University , designed to connect, empower, and inspire the next generation of leaders, creators, and changemakers. Whether you're a new student looking to get involved, a current member seeking collaboration opportunities, or an alumni staying connected, the Cluster One SVU website serves as your central digital gateway.
+Explore upcoming events, access exclusive resources, register for workshops, and engage with fellow members through integrated forums and announcements. From [mention focus areas: e.g., tech innovation, cultural exchange, professional development, community service], Cluster One SVU fosters a vibrant ecosystem where ideas grow and friendships flourish.
+Stay updated with real-time notifications, member spotlights, and impact stories that showcase our community's achievements. With an intuitive, mobile-friendly interface and secure member portals, staying connected to the Cluster One SVU family has never been easier.
+Your journey to connection, growth, and impact starts here. 🚀
