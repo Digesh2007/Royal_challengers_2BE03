@@ -1,0 +1,127 @@
+<nav id="dashboard-nav" class="dashboard-sidebar" role="navigation" aria-label="Dashboard navigation">
+  <div class="sidebar-top">
+    <div class="sidebar-logo">
+      <svg width="24" height="24" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+        <circle cx="18" cy="18" r="4" fill="#00F5FF"/>
+        <circle cx="6" cy="10" r="3" fill="#00F5FF" opacity="0.7"/>
+        <circle cx="30" cy="10" r="3" fill="#00F5FF" opacity="0.7"/>
+        <circle cx="6" cy="26" r="3" fill="#FFB700" opacity="0.7"/>
+        <circle cx="30" cy="26" r="3" fill="#FFB700" opacity="0.7"/>
+        <line x1="18" y1="18" x2="6" y2="10" stroke="#00F5FF" stroke-width="1" opacity="0.5"/>
+        <line x1="18" y1="18" x2="30" y2="10" stroke="#00F5FF" stroke-width="1" opacity="0.5"/>
+        <line x1="18" y1="18" x2="6" y2="26" stroke="#FFB700" stroke-width="1" opacity="0.5"/>
+        <line x1="18" y1="18" x2="30" y2="26" stroke="#FFB700" stroke-width="1" opacity="0.5"/>
+      </svg>
+      <span class="sidebar-brand">ClusterOne</span>
+    </div>
+    <div class="sidebar-user" id="sidebar-user-info">
+      <div class="sidebar-avatar" id="sidebar-avatar" aria-hidden="true">U</div>
+      <div class="sidebar-user-details">
+        <p class="sidebar-user-name" id="sidebar-user-name">User</p>
+        <span class="sidebar-role-badge" id="sidebar-role-badge">student</span>
+      </div>
+    </div>
+  </div>
+
+  <ul class="sidebar-nav-list" role="list">
+    <!-- Common -->
+    <li>
+      <a href="#" class="sidebar-nav-item active" data-view="overview" aria-label="Overview dashboard">
+        <i class="fa-solid fa-house nav-icon" aria-hidden="true"></i>
+        <span class="nav-label">Overview</span>
+      </a>
+    </li>
+
+    <!-- Student-only nav items -->
+    <li class="student-only-nav">
+      <a href="#" class="sidebar-nav-item" data-view="my-applications" aria-label="My OD applications">
+        <i class="fa-solid fa-file-lines nav-icon" aria-hidden="true"></i>
+        <span class="nav-label">My Applications</span>
+      </a>
+    </li>
+    <li class="student-only-nav">
+      <a href="#" class="sidebar-nav-item" data-view="history" aria-label="Club history">
+        <i class="fa-solid fa-clock-rotate-left nav-icon" aria-hidden="true"></i>
+        <span class="nav-label">Club History</span>
+      </a>
+    </li>
+    <li class="student-only-nav">
+      <a href="#" class="sidebar-nav-item" data-view="works" aria-label="Student works gallery">
+        <i class="fa-solid fa-layer-group nav-icon" aria-hidden="true"></i>
+        <span class="nav-label">Student Works</span>
+      </a>
+    </li>
+    <li class="student-only-nav">
+      <a href="#" class="sidebar-nav-item" data-view="achievements" aria-label="My achievements">
+        <i class="fa-solid fa-trophy nav-icon" aria-hidden="true"></i>
+        <span class="nav-label">Achievements</span>
+      </a>
+    </li>
+
+    <!-- Coordinator-only nav items -->
+    <li class="coordinator-only-nav" hidden>
+      <a href="#" class="sidebar-nav-item" data-view="all-applications" aria-label="All OD applications">
+        <i class="fa-solid fa-file-lines nav-icon" aria-hidden="true"></i>
+        <span class="nav-label">All Applications</span>
+      </a>
+    </li>
+    <li class="coordinator-only-nav" hidden>
+      <a href="#" class="sidebar-nav-item" data-view="event-manager" aria-label="Event manager">
+        <i class="fa-solid fa-calendar-plus nav-icon" aria-hidden="true"></i>
+        <span class="nav-label">Event Manager</span>
+      </a>
+    </li>
+    <li class="coordinator-only-nav" hidden>
+      <a href="#" class="sidebar-nav-item" data-view="members" aria-label="Manage members">
+        <i class="fa-solid fa-users nav-icon" aria-hidden="true"></i>
+        <span class="nav-label">Members</span>
+      </a>
+    </li>
+    <li class="coordinator-only-nav" hidden>
+      <a href="#" class="sidebar-nav-item" data-view="announcements" aria-label="Announcements">
+        <i class="fa-solid fa-bullhorn nav-icon" aria-hidden="true"></i>
+        <span class="nav-label">Announcements</span>
+      </a>
+    </li>
+
+    <!-- Common bottom nav -->
+    <li>
+      <a href="#" class="sidebar-nav-item" data-view="new-od" aria-label="New OD application">
+        <i class="fa-solid fa-plus nav-icon" aria-hidden="true"></i>
+        <span class="nav-label">New OD Application</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="sidebar-nav-item" data-view="events" aria-label="Upcoming events">
+        <i class="fa-solid fa-calendar-days nav-icon" aria-hidden="true"></i>
+        <span class="nav-label">Events</span>
+      </a>
+    </li>
+    <li class="student-only-nav">
+      <a href="#" class="sidebar-nav-item" data-view="contact" aria-label="Contact coordinators">
+        <i class="fa-solid fa-envelope nav-icon" aria-hidden="true"></i>
+        <span class="nav-label">Contact</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="sidebar-nav-item" data-view="settings" aria-label="Settings">
+        <i class="fa-solid fa-gear nav-icon" aria-hidden="true"></i>
+        <span class="nav-label">Settings</span>
+      </a>
+    </li>
+  </ul>
+
+  <div class="sidebar-bottom">
+    <button id="sidebar-logout-btn" class="sidebar-logout-btn" aria-label="Logout from dashboard">
+      <i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i>
+      <span>Logout</span>
+    </button>
+    <p class="sidebar-version">v2.0.0 · S-VYASA</p>
+  </div>
+</nav>
+
+<!-- Mobile sidebar toggle -->
+<button id="sidebar-toggle-btn" class="sidebar-toggle-btn" aria-label="Toggle sidebar" aria-expanded="false">
+  <i class="fa-solid fa-bars" aria-hidden="true"></i>
+</button>
+<div id="sidebar-overlay" class="sidebar-overlay" aria-hidden="true"></div>

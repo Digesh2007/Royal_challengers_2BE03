@@ -1,0 +1,70 @@
+<header id="site-header" class="site-header" role="banner">
+  <div class="container header-inner">
+
+    <!-- Logo -->
+    <a href="#home" class="header-logo" aria-label="Cluster One Home">
+      <div class="logo-icon" aria-hidden="true">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="18" cy="18" r="4" fill="#00F5FF"/>
+          <circle cx="6" cy="10" r="3" fill="#00F5FF" opacity="0.7"/>
+          <circle cx="30" cy="10" r="3" fill="#00F5FF" opacity="0.7"/>
+          <circle cx="6" cy="26" r="3" fill="#FFB700" opacity="0.7"/>
+          <circle cx="30" cy="26" r="3" fill="#FFB700" opacity="0.7"/>
+          <circle cx="18" cy="4" r="2.5" fill="#00F5FF" opacity="0.5"/>
+          <circle cx="18" cy="32" r="2.5" fill="#FFB700" opacity="0.5"/>
+          <line x1="18" y1="18" x2="6" y2="10" stroke="#00F5FF" stroke-width="1" opacity="0.5"/>
+          <line x1="18" y1="18" x2="30" y2="10" stroke="#00F5FF" stroke-width="1" opacity="0.5"/>
+          <line x1="18" y1="18" x2="6" y2="26" stroke="#FFB700" stroke-width="1" opacity="0.5"/>
+          <line x1="18" y1="18" x2="30" y2="26" stroke="#FFB700" stroke-width="1" opacity="0.5"/>
+          <line x1="18" y1="18" x2="18" y2="4" stroke="#00F5FF" stroke-width="1" opacity="0.3"/>
+          <line x1="18" y1="18" x2="18" y2="32" stroke="#FFB700" stroke-width="1" opacity="0.3"/>
+        </svg>
+      </div>
+      <span class="logo-wordmark">Cluster<span class="logo-accent">One</span></span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="header-nav" role="navigation" aria-label="Main navigation">
+      <a href="#home" class="nav-link active" data-scroll="hero">Home</a>
+      <a href="#colleges" class="nav-link" data-scroll="colleges">About</a>
+      <a href="#team" class="nav-link" data-scroll="team">Team</a>
+      <a href="#connect" class="nav-link" data-scroll="connect">Connect</a>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="header-actions">
+      <button id="btn-login" class="btn btn-ghost" aria-label="Open login modal" aria-haspopup="dialog">
+        Login
+      </button>
+      <a href="#connect" class="btn btn-primary" data-scroll="connect" aria-label="Join Cluster One">
+        Join Us
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+
+      <!-- Mobile Hamburger -->
+      <button id="hamburger-btn" class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-drawer">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
+    <nav class="mobile-nav" aria-label="Mobile navigation links">
+      <a href="#home" class="mobile-nav-link" data-scroll="hero">Home</a>
+      <a href="#colleges" class="mobile-nav-link" data-scroll="colleges">About</a>
+      <a href="#team" class="mobile-nav-link" data-scroll="team">Team</a>
+      <a href="#connect" class="mobile-nav-link" data-scroll="connect">Connect</a>
+      <div class="mobile-nav-actions">
+        <button id="btn-login-mobile" class="btn btn-ghost btn-full">Login</button>
+        <a href="#connect" class="btn btn-primary btn-full">Join Us</a>
+      </div>
+    </nav>
+  </div>
+  <div id="mobile-overlay" class="mobile-overlay" aria-hidden="true"></div>
+</header>
