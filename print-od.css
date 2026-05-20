@@ -1,0 +1,71 @@
+/* FILE 24 — css/print-od.css */
+
+/* === Screen View === */
+.print-page-body { background: var(--bg-base); min-height: 100vh; padding: var(--sp-6); }
+.print-controls { position: sticky; top: 0; z-index: 10; background: rgba(5,10,20,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); margin: calc(-1 * var(--sp-6)); margin-bottom: var(--sp-6); padding: var(--sp-4) var(--sp-6); }
+.print-controls-inner { display: flex; align-items: center; justify-content: space-between; max-width: 860px; margin: 0 auto; }
+.print-actions { display: flex; gap: var(--sp-3); }
+.od-letter-page { background: #ffffff; color: #1a1a2e; max-width: 800px; margin: 0 auto; padding: 48px; border-radius: var(--radius-lg); box-shadow: 0 8px 48px rgba(0,0,0,0.5); font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; line-height: 1.6; }
+
+/* Letterhead */
+.letter-header { margin-bottom: 32px; }
+.letter-logo-area { display: flex; align-items: center; gap: 20px; margin-bottom: 20px; }
+.letter-logo-icon { flex-shrink: 0; }
+.letter-institution-info { flex: 1; }
+.letter-club-name { font-size: 18px; font-weight: 800; color: #0a0a1a; font-family: 'IBM Plex Sans', sans-serif; margin-bottom: 4px; }
+.letter-college-name { font-size: 13px; color: #333; font-weight: 600; }
+.letter-contact { font-size: 12px; color: #666; margin-top: 2px; }
+.letter-header-divider { height: 2px; background: linear-gradient(90deg, #00c8d4, #FFB700, transparent); border-radius: 1px; }
+
+/* Body */
+.letter-body { margin-bottom: 32px; }
+.letter-date-line { text-align: right; font-size: 13px; color: #444; margin-bottom: 24px; }
+.letter-date-value { font-weight: 600; }
+.letter-to-block { margin-bottom: 20px; font-size: 13.5px; color: #222; line-height: 1.8; }
+.letter-recipient { font-weight: 700; font-size: 14px; }
+.letter-dept, .letter-college-addr { color: #444; }
+.letter-subject-line { background: #f0f8ff; border-left: 3px solid #00c8d4; padding: 10px 16px; border-radius: 0 6px 6px 0; margin-bottom: 20px; font-size: 13.5px; color: #1a1a2e; }
+.letter-salutation { font-size: 13.5px; margin-bottom: 12px; color: #222; }
+.letter-body-text p { margin-bottom: 12px; font-size: 13.5px; color: #333; text-align: justify; }
+
+/* Tables */
+.letter-details-table-wrapper { margin: 20px 0; }
+.letter-details-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.letter-details-table th { background: #f5f7fa; color: #333; font-weight: 600; padding: 10px 14px; text-align: left; border: 1px solid #ddd; width: 20%; }
+.letter-details-table td { padding: 10px 14px; border: 1px solid #ddd; color: #222; }
+.od-table-heading { font-size: 13px; font-weight: 700; color: #333; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; }
+.od-schedule-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 20px; }
+.od-schedule-table th { background: #0a0a1a; color: #fff; padding: 10px 14px; text-align: left; border: 1px solid #333; font-weight: 600; }
+.od-schedule-table td { padding: 9px 14px; border: 1px solid #ddd; color: #222; }
+.od-schedule-table tr:nth-child(even) td { background: #f9f9f9; }
+.letter-closing-para { font-size: 13.5px; color: #333; margin-bottom: 16px; text-align: justify; }
+.letter-thanking { font-size: 13.5px; color: #333; line-height: 1.8; }
+
+/* Signatures */
+.letter-signature-block { display: flex; justify-content: space-between; align-items: flex-end; margin: 40px 0 24px; gap: 20px; }
+.sig-col { flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.sig-stamp-col { flex: 0.8; }
+.sig-line { width: 100%; height: 1px; background: #333; margin-bottom: 8px; }
+.sig-name { font-weight: 700; font-size: 13px; color: #1a1a2e; margin-bottom: 2px; }
+.sig-role { font-size: 12px; color: #555; }
+.sig-id { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #888; margin-top: 2px; }
+.stamp-box { width: 100px; height: 100px; border: 2px dashed #ccc; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 11px; color: #aaa; line-height: 1.4; font-weight: 600; margin: 0 auto; }
+
+/* Footer */
+.letter-footer { border-top: 1px solid #eee; padding-top: 16px; display: flex; justify-content: space-between; align-items: center; }
+.letter-od-id { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #666; }
+.letter-generated { font-size: 11px; color: #999; }
+
+/* === PRINT MEDIA === */
+@media print {
+  @page { size: A4; margin: 20mm 18mm; }
+  .no-print, .print-controls { display: none !important; }
+  body, .print-page-body { background: white !important; padding: 0 !important; }
+  .od-letter-page { box-shadow: none !important; border-radius: 0 !important; max-width: 100% !important; padding: 0 !important; color: #000 !important; }
+  .letter-club-name, .letter-recipient, .sig-name { color: #000 !important; }
+  .letter-subject-line { background: #f0f8ff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .od-schedule-table th { background: #000 !important; color: #fff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .letter-details-table th { background: #f5f7fa !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .letter-header-divider { background: linear-gradient(90deg, #00c8d4, #FFB700) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  a { text-decoration: none !important; color: inherit !important; }
+}
