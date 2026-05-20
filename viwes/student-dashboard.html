@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Dashboard — Cluster One</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/dashboard.css" />
+</head>
+<body>
+<div class="dashboard-layout">
+  <div data-component="dashboard-nav" id="dashboard-nav-slot"></div>
+  <main class="dashboard-main" id="student-main">
+
+    <!-- OVERVIEW -->
+    <div class="dash-section active" id="section-overview">
+      <div class="dash-header">
+        <div>
+          <h1 class="dash-title">Welcome back, <span id="student-welcome-name" class="accent-cyan">Student</span> &#128075;</h1>
+          <p class="dash-subtitle">Manage ODs, explore events, and track your achievements.</p>
+        </div>
+        <div class="student-id-badge">
+          <i class="fa-solid fa-id-card" aria-hidden="true"></i>
+          <span class="mono-text" id="student-id-display">ID: —</span>
+        </div>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-card-icon cyan"><i class="fa-solid fa-file-lines"></i></div>
+          <div class="stat-card-info"><span class="stat-card-value" id="stat-total">0</span><span class="stat-card-label">Total Applied</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-icon green"><i class="fa-solid fa-circle-check"></i></div>
+          <div class="stat-card-info"><span class="stat-card-value" id="stat-approved">0</span><span class="stat-card-label">Approved</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-icon amber"><i class="fa-solid fa-clock"></i></div>
+          <div class="stat-card-info"><span class="stat-card-value" id="stat-pending">0</span><span class="stat-card-label">Pending</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-icon red"><i class="fa-solid fa-circle-xmark"></i></div>
+          <div class="stat-card-info"><span class="stat-card-value" id="stat-rejected">0</span><span class="stat-card-label">Rejected</span></div>
+        </div>
+      </div>
+      <div class="overview-widgets-row">
+        <div class="widget-card">
+          <h2 class="widget-title"><i class="fa-solid fa-calendar-days"></i> Upcoming Events</h2>
+          <div class="events-list" id="student-events-list"></div>
+        </div>
+        <div class="widget-card">
+          <h2 class="widget-title"><i class="fa-solid fa-bullhorn"></i> Announcements</h2>
+          <div class="announcements-mini-list" id="student-announcements-mini"></div>
+        </div>
+      </div>
+      <div class="shortcut-card">
+        <div class="shortcut-icon"><i class="fa-solid fa-plus"></i></div>
+        <div class="shortcut-info">
+          <h3>New OD Application</h3>
+          <p>Apply for on-duty leave for your next event</p>
+        </div>
+        <button class="btn btn-primary" id="student-new-od-btn">
+          <i class="fa-solid fa-paper-plane"></i> Apply Now
+        </button>
+      </div>
+    </div>
+
+    <!-- MY APPLICATIONS -->
+    <div class="dash-section" id="section-my-applications">
+      <div class="dash-header">
+        <h1 class="dash-title">My OD Applications</h1>
+        <button class="btn btn-primary" id="student-new-od-btn-2"><i class="fa-solid fa-plus"></i> New Application</button>
+      </div>
+      <div class="table-filters">
+        <div class="filter-group">
+          <label class="form-label" for="app-filter-status">Status</label>
+          <select id="app-filter-status" class="form-select form-select-sm">
+            <option value="">All</option>
+            <option value="pending">Pending</option>
+            <option value="approved">Approved</option>
+            <option value="rejected">Rejected</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label class="form-label" for="app-search">Search</label>
+          <input type="search" id="app-search" class="form-input form-input-sm" placeholder="Search by event..." />
+        </div>
+      </div>
+      <div class="table-wrapper">
+        <table class="data-table">
+          <thead><tr>
+            <th>OD ID</th><th>Date</th><th>Event</th><th>Purpose</th><th>Days</th><th>Status</th><th>Actions</th>
+          </tr></thead>
+          <tbody id="student-applications-tbody">
+            <tr id="student-empty-row"><td colspan="7" class="table-empty">
+              <div class="empty-state">
+                <i class="fa-solid fa-file-circle-question" style="font-size:2.5rem;opacity:0.3;"></i>
+                <p>No OD applications yet. <button class="link-btn" id="empty-new-od-btn">Create your first one</button></p>
+              </div>
+            </td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- CLUB HISTORY -->
+    <div class="dash-section" id="section-history">
+      <div class="dash-header">
+        <h1 class="dash-title"><i class="fa-solid fa-clock-rotate-left"></i> Club History</h1>
+      </div>
+      <p class="dash-subtitle" style="margin-bottom:2rem;">The journey of Cluster One at S-VYASA — milestones, achievements, and memories.</p>
+      <div class="timeline" id="club-history-timeline"></div>
+    </div>
+
+    <!-- STUDENT WORKS -->
+    <div class="dash-section" id="section-works">
+      <div class="dash-header">
+        <h1 class="dash-title"><i class="fa-solid fa-layer-group"></i> Student Works</h1>
+      </div>
+      <p class="dash-subtitle" style="margin-bottom:2rem;">Projects and innovations built by Cluster One members.</p>
+      <div class="works-grid" id="student-works-grid"></div>
+    </div>
+
+    <!-- ACHIEVEMENTS -->
+    <div class="dash-section" id="section-achievements">
+      <div class="dash-header">
+        <h1 class="dash-title"><i class="fa-solid fa-trophy"></i> My Achievements</h1>
+      </div>
+      <p class="dash-subtitle" style="margin-bottom:2rem;">Badges and milestones earned through your Cluster One journey.</p>
+      <div class="achievements-grid" id="achievements-grid"></div>
+    </div>
+
+    <!-- EVENTS -->
+    <div class="dash-section" id="section-events">
+      <div class="dash-header">
+        <h1 class="dash-title"><i class="fa-solid fa-calendar-days"></i> Upcoming Events</h1>
+      </div>
+      <div class="events-grid" id="dash-events-grid"></div>
+    </div>
+
+    <!-- SETTINGS -->
+    <div class="dash-section" id="section-settings">
+      <h1 class="dash-title"><i class="fa-solid fa-gear"></i> Settings</h1>
+      <div class="settings-card">
+        <h2 class="settings-section-title">Profile Information</h2>
+        <div class="form-group">
+          <label class="form-label" for="settings-name">Display Name</label>
+          <input type="text" id="settings-name" class="form-input" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="settings-email">Email</label>
+          <input type="email" id="settings-email" class="form-input" readonly />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="settings-dept">Department</label>
+          <input type="text" id="settings-dept" class="form-input" readonly />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="settings-id">Student ID</label>
+          <input type="text" id="settings-id" class="form-input" readonly />
+        </div>
+        <button class="btn btn-primary" id="settings-save-btn">
+          <i class="fa-solid fa-floppy-disk"></i> Save Changes
+        </button>
+      </div>
+    </div>
+
+    <!-- CONTACT COORDINATORS -->
+    <div class="dash-section" id="section-contact">
+      <div class="dash-header">
+        <h1 class="dash-title"><i class="fa-solid fa-envelope"></i> Contact Coordinators</h1>
+      </div>
+      <p class="dash-subtitle" style="margin-bottom:2rem;">Reach out to our club coordinators for queries, feedback, or support.</p>
+      
+      <!-- Contact Form -->
+      <div class="settings-card">
+        <h2 class="settings-section-title">Send a Message</h2>
+        <form id="coordinator-contact-form" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="contact-coordinator">Select Coordinator</label>
+            <select id="contact-coordinator" class="form-select" required>
+              <option value="">Select a coordinator</option>
+            </select>
+            <span class="field-error" id="contact-coordinator-error" role="alert"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="contact-subject">Subject</label>
+            <input type="text" id="contact-subject" class="form-input" placeholder="e.g., OD Query, Event Feedback" required />
+            <span class="field-error" id="contact-subject-error" role="alert"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="contact-message">Message</label>
+            <textarea id="contact-message" class="form-input" rows="5" placeholder="Type your message here..." required></textarea>
+            <span class="field-error" id="contact-message-error" role="alert"></span>
+          </div>
+          <button type="submit" class="btn btn-primary" id="contact-submit-btn">
+            <i class="fa-solid fa-paper-plane"></i> Send Message
+          </button>
+          <span id="contact-form-success" class="form-success" hidden>✓ Message sent successfully!</span>
+        </form>
+      </div>
+
+      <!-- Coordinators Directory -->
+      <div style="margin-top: 3rem;">
+        <h2 class="settings-section-title">Coordinators Directory</h2>
+        <div class="coordinators-grid" id="coordinators-grid"></div>
+      </div>
+    </div>
+
+  </main>
+</div>
+<div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+<script src="../config/club-config.js"></script>
+<script type="module" src="../js/app.js"></script>
+</body>
+</html>

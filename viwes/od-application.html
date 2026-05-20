@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OD Application — Cluster One</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/dashboard.css" />
+</head>
+<body>
+<main class="dashboard-main od-apply-main">
+    <div class="od-form-wrapper">
+      <div class="od-form-card">
+        <div class="od-form-header">
+          <h1 class="od-form-title">On Duty Application</h1>
+          <p class="od-form-subtitle">Complete all fields. Approved ODs generate an official letter for submission to your HOD.</p>
+          <div class="od-id-preview mono-text" id="od-id-preview" aria-live="polite">OD ID: Generating...</div>
+        </div>
+
+        <form id="od-form" novalidate>
+          <!-- Student Info (Auto-filled) -->
+          <div class="od-form-section">
+            <h2 class="od-section-title">Student Information</h2>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="od-student-name">Student Name <span class="required-star">*</span></label>
+                <input type="text" id="od-student-name" class="form-input" placeholder="Auto-filled from profile" readonly />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="od-student-id">Student ID <span class="required-star">*</span></label>
+                <input type="text" id="od-student-id" class="form-input" placeholder="e.g. CS22B001" readonly />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="od-department">Department <span class="required-star">*</span></label>
+                <select id="od-department" class="form-select" required>
+                  <option value="">Select department</option>
+                </select>
+                <span class="field-error" id="od-department-error" role="alert"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="od-year">Year of Study <span class="required-star">*</span></label>
+                <select id="od-year" class="form-select" required>
+                  <option value="">Select year</option>
+                  <option value="I">I Year</option>
+                  <option value="II">II Year</option>
+                  <option value="III">III Year</option>
+                  <option value="IV">IV Year</option>
+                </select>
+                <span class="field-error" id="od-year-error" role="alert"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event Info -->
+          <div class="od-form-section">
+            <h2 class="od-section-title">Event Details</h2>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="od-purpose">Purpose of OD <span class="required-star">*</span></label>
+                <select id="od-purpose" class="form-select" required>
+                  <option value="">Select purpose</option>
+                </select>
+                <span class="field-error" id="od-purpose-error" role="alert"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="od-event-name">Event Name <span class="required-star">*</span></label>
+                <input type="text" id="od-event-name" class="form-input" placeholder="e.g. HackCluster 2025" required />
+                <span class="field-error" id="od-event-name-error" role="alert"></span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="od-organizer">Event Organizer <span class="required-star">*</span></label>
+                <input type="text" id="od-organizer" class="form-input" placeholder="e.g. Cluster One Tech Club" required />
+                <span class="field-error" id="od-organizer-error" role="alert"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="od-venue">Venue <span class="required-star">*</span></label>
+                <input type="text" id="od-venue" class="form-input" placeholder="e.g. Main Auditorium, XYZ College" required />
+                <span class="field-error" id="od-venue-error" role="alert"></span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="od-from-date">From Date <span class="required-star">*</span></label>
+                <input type="date" id="od-from-date" class="form-input" required />
+                <span class="field-error" id="od-from-date-error" role="alert"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="od-to-date">To Date <span class="required-star">*</span></label>
+                <input type="date" id="od-to-date" class="form-input" required />
+                <span class="field-error" id="od-to-date-error" role="alert"></span>
+              </div>
+            </div>
+            <div class="form-group form-group-sm">
+              <label class="form-label" for="od-num-days">Number of Days</label>
+              <input type="number" id="od-num-days" class="form-input" readonly placeholder="Auto-calculated" />
+            </div>
+          </div>
+
+          <!-- Supporting Docs -->
+          <div class="od-form-section">
+            <h2 class="od-section-title">Supporting Documents</h2>
+            <div class="form-group">
+              <label class="form-label" for="od-document">Upload Document <span class="muted-label">(PDF or Image)</span></label>
+              <div class="file-upload-area" id="od-file-drop-zone">
+                <input type="file" id="od-document" class="file-input" accept=".pdf,.jpg,.jpeg,.png" />
+                <div class="file-upload-content">
+                  <span class="file-upload-icon" aria-hidden="true">&#128196;</span>
+                  <p class="file-upload-text">Drag & drop or <span class="file-browse-text">browse files</span></p>
+                  <p class="file-upload-hint">PDF, JPG, PNG up to 5MB</p>
+                </div>
+                <div class="file-selected" id="file-selected-display" hidden>
+                  <span class="file-icon" aria-hidden="true">&#128196;</span>
+                  <span class="file-name" id="selected-file-name"></span>
+                  <button type="button" class="file-remove-btn" id="file-remove-btn" aria-label="Remove file">&#10005;</button>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="od-notes">Additional Notes <span class="muted-label">(Optional)</span></label>
+              <textarea id="od-notes" class="form-textarea" rows="4" placeholder="Any additional information relevant to your application..."></textarea>
+            </div>
+          </div>
+
+          <!-- Form Actions -->
+          <div class="od-form-actions">
+            <button type="button" class="btn btn-ghost" id="od-preview-btn" aria-label="Preview OD application">
+              &#128196; Preview Application
+            </button>
+            <button type="submit" class="btn btn-primary" id="od-submit-btn" aria-label="Submit OD application">
+              <span class="btn-text">Submit Application</span>
+              <span class="btn-loader" aria-hidden="true"></span>
+            </button>
+          </div>
+
+          <!-- Success State -->
+          <div class="od-success" id="od-success-state" hidden>
+            <div class="success-icon" aria-hidden="true">&#10003;</div>
+            <h2 class="success-title">Application Submitted!</h2>
+            <p class="success-desc">Your OD application has been submitted successfully. The coordinator will review it shortly.</p>
+            <div class="success-id mono-text" id="success-od-id"></div>
+            <div class="success-actions">
+              <button class="btn btn-primary" id="download-od-btn" aria-label="Download OD letter PDF">
+                &#128229; Download OD Letter
+              </button>
+              <button class="btn btn-ghost" id="submit-another-btn" aria-label="Submit another application">
+                Submit Another
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Preview Modal -->
+    <div id="od-preview-modal" class="od-preview-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="od-preview-title">
+      <div class="od-preview-card">
+        <div class="od-preview-header">
+          <h2 id="od-preview-title">Application Preview</h2>
+          <button class="auth-close" id="od-preview-close-btn" aria-label="Close preview">&#10005;</button>
+        </div>
+        <div class="od-preview-content" id="od-preview-content">
+          <!-- Rendered by JS -->
+        </div>
+        <div class="od-preview-actions">
+          <button class="btn btn-ghost" id="od-preview-edit-btn">Edit Application</button>
+          <button class="btn btn-primary" id="od-preview-submit-btn">Confirm & Submit</button>
+        </div>
+      </div>
+    </div>
+  </main>

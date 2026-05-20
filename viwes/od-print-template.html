@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OD Letter — Cluster One | S-VYASA University</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/print-od.css" />
+</head>
+<body class="print-page-body">
+
+  <!-- Screen-only controls -->
+  <div class="no-print print-controls" id="print-controls">
+    <div class="print-controls-inner">
+      <a href="#" id="back-to-dashboard" class="btn btn-ghost">&#8592; Back to Dashboard</a>
+      <div class="print-actions">
+        <button class="btn btn-ghost" onclick="window.print()" aria-label="Print OD letter">&#128438; Print Letter</button>
+        <button class="btn btn-primary" id="download-pdf-btn" aria-label="Download as PDF">&#128229; Download PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- A4 Letter Container -->
+  <div class="od-letter-page" id="od-letter-page">
+
+    <!-- Letterhead -->
+    <div class="letter-header">
+      <div class="letter-logo-area">
+        <div class="letter-logo-icon">
+          <svg width="48" height="48" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+            <circle cx="18" cy="18" r="5" fill="#003366"/>
+            <circle cx="6" cy="10" r="3.5" fill="#003366" opacity="0.7"/>
+            <circle cx="30" cy="10" r="3.5" fill="#003366" opacity="0.7"/>
+            <circle cx="6" cy="26" r="3.5" fill="#003366" opacity="0.5"/>
+            <circle cx="30" cy="26" r="3.5" fill="#003366" opacity="0.5"/>
+            <line x1="18" y1="18" x2="6" y2="10" stroke="#003366" stroke-width="1.5" opacity="0.8"/>
+            <line x1="18" y1="18" x2="30" y2="10" stroke="#003366" stroke-width="1.5" opacity="0.8"/>
+            <line x1="18" y1="18" x2="6" y2="26" stroke="#003366" stroke-width="1.5" opacity="0.6"/>
+            <line x1="18" y1="18" x2="30" y2="26" stroke="#003366" stroke-width="1.5" opacity="0.6"/>
+          </svg>
+        </div>
+        <div class="letter-institution-info">
+          <h1 class="letter-college-name">S-VYASA Deemed to be University</h1>
+          <p class="letter-club-name">Cluster One — Tech Innovation Club</p>
+          <p class="letter-contact">clusterone@svyasa.edu.in &nbsp;|&nbsp; Prashanti Kutiram, Vivekananda Road, Bengaluru - 560105</p>
+        </div>
+      </div>
+      <div class="letter-header-divider"></div>
+      <div class="letter-od-badge">ON DUTY LETTER — VALID FOR EVENT ONLY</div>
+    </div>
+
+    <!-- Letter Body -->
+    <div class="letter-body">
+      <div class="letter-date-line">
+        <span>Date: </span><span id="letter-date" class="letter-date-value"></span>
+        <span style="float:right;">Ref No: </span><span id="letter-od-id-top" class="letter-date-value mono-text"></span>
+      </div>
+
+      <div class="letter-to-block">
+        <p>To,</p>
+        <p class="letter-recipient">The Principal / Head of Department</p>
+        <p id="letter-dept-addr" class="letter-dept"></p>
+        <p>S-VYASA Deemed to be University, Bengaluru - 560105</p>
+      </div>
+
+      <div class="letter-subject-line">
+        <strong>Sub: Request for On Duty (OD) Leave — <span id="letter-event-name">Event Name</span></strong>
+      </div>
+
+      <div class="letter-salutation">Respected Sir/Madam,</div>
+
+      <div class="letter-body-text">
+        <p>
+          With due respect, we hereby request that On Duty (OD) leave be granted to the following
+          student for participation in <strong id="ltr-event-name-inline"></strong>, organized by
+          <strong id="ltr-organizer"></strong>, to be held at <strong id="ltr-venue"></strong>.
+        </p>
+        <p>
+          The student will be representing <strong>S-VYASA Deemed to be University</strong> and
+          Cluster One Tech Club at this event. We kindly request that all academic obligations
+          during this period be treated as On Duty and no attendance penalty be imposed.
+        </p>
+      </div>
+
+      <!-- Student Details Table -->
+      <div class="letter-details-table-wrapper">
+        <table class="letter-details-table">
+          <tbody>
+            <tr>
+              <th scope="row">Student Name</th>
+              <td id="ltr-student-name">—</td>
+              <th scope="row">Student ID / Roll No.</th>
+              <td id="ltr-student-id" class="mono-text">—</td>
+            </tr>
+            <tr>
+              <th scope="row">Department</th>
+              <td id="ltr-department">—</td>
+              <th scope="row">Year of Study</th>
+              <td id="ltr-year">—</td>
+            </tr>
+            <tr>
+              <th scope="row">Event Name</th>
+              <td id="ltr-event-table">—</td>
+              <th scope="row">Purpose</th>
+              <td id="ltr-purpose">—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- OD Schedule Table -->
+      <div class="letter-od-table-wrapper">
+        <h3 class="od-table-heading">On Duty Schedule</h3>
+        <table class="od-schedule-table">
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Day</th>
+              <th scope="col">Purpose / Activity</th>
+            </tr>
+          </thead>
+          <tbody id="od-schedule-tbody">
+            <!-- Rendered by JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <p class="letter-closing-para">
+        We assure that the student will complete all missed academic work upon their return.
+        Kindly grant the necessary On Duty leave and oblige.
+      </p>
+
+      <p class="letter-thanking">Thanking you,<br />Yours faithfully,</p>
+    </div>
+
+    <!-- Signature Block -->
+    <div class="letter-signature-block">
+      <div class="sig-col">
+        <div class="sig-line"></div>
+        <p class="sig-name" id="sig-student-name">Student Name</p>
+        <p class="sig-role">Student Signature</p>
+        <p class="sig-id mono-text" id="sig-student-id"></p>
+      </div>
+      <div class="sig-col sig-stamp-col">
+        <div class="stamp-box" aria-label="Club stamp placeholder">
+          <span>CLUSTER ONE<br/>CLUB STAMP</span>
+        </div>
+      </div>
+      <div class="sig-col">
+        <div class="sig-line"></div>
+        <p class="sig-name">Faculty Coordinator</p>
+        <p class="sig-role">Coordinator Signature</p>
+        <p class="sig-id">Cluster One — S-VYASA</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="letter-footer">
+      <p class="letter-od-id mono-text">OD Reference: <span id="letter-od-id"></span></p>
+      <p class="letter-generated">Generated via Cluster One Portal — clusterone@svyasa.edu.in | S-VYASA Deemed to be University</p>
+    </div>
+
+  </div>
+
+  <script src="../config/club-config.js"></script>
+  <script type="module" src="../js/app.js"></script>
+</body>
+</html>
