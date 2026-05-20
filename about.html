@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Cluster One — S-VYASA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <style>
+    .about-section { padding: 4rem 2rem; }
+    .about-header { text-align: center; margin-bottom: 3rem; }
+    .about-header h1 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--accent-cyan); }
+    .about-content { max-width: 1000px; margin: 0 auto; }
+    .about-card { background: var(--bg-secondary); border-left: 4px solid var(--accent-cyan); padding: 2rem; border-radius: 8px; margin-bottom: 2rem; }
+    .about-card h2 { font-size: 1.5rem; margin-bottom: 1rem; }
+    .timeline { position: relative; padding: 2rem 0; }
+    .timeline-item { margin-bottom: 2rem; padding-left: 2rem; border-left: 2px solid var(--accent-cyan); }
+    .timeline-item::before { content: ''; position: absolute; left: -9px; top: 0; width: 16px; height: 16px; background: var(--accent-cyan); border-radius: 50%; }
+    .milestone { font-weight: 600; color: var(--accent-cyan); margin-bottom: 0.5rem; }
+    .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem; }
+    .team-card { text-align: center; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px; }
+    .team-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue)); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white; }
+    .team-name { font-weight: 600; margin-bottom: 0.3rem; }
+    .team-role { font-size: 0.85rem; color: var(--text-secondary); }
+  </style>
+</head>
+<body>
+  <header id="header-slot"></header>
+
+  <main>
+    <!-- About Hero -->
+    <section class="about-section" style="background: linear-gradient(135deg, rgba(0, 245, 255, 0.1), rgba(0, 128, 255, 0.1));">
+      <div class="about-header">
+        <h1><i class="fa-solid fa-circle-info"></i> About Cluster One</h1>
+        <p style="font-size: 1.1rem; color: var(--text-secondary);">Building Tomorrow's Tech Leaders</p>
+      </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="about-section">
+      <div class="about-content">
+        <div class="about-card">
+          <h2><i class="fa-solid fa-bullseye" style="margin-right: 0.5rem; color: var(--accent-cyan);"></i> Our Mission</h2>
+          <p>To foster innovation, collaboration, and excellence in technology by providing students with opportunities to learn, create, and share knowledge through engaging events, projects, and community engagement.</p>
+        </div>
+
+        <div class="about-card">
+          <h2><i class="fa-solid fa-eye" style="margin-right: 0.5rem; color: var(--accent-cyan);"></i> Our Vision</h2>
+          <p>To become the leading technical community at S-VYASA, recognized for nurturing talented developers, designers, and innovators who make meaningful contributions to the tech industry.</p>
+        </div>
+
+        <div class="about-card">
+          <h2><i class="fa-solid fa-star" style="margin-right: 0.5rem; color: var(--accent-cyan);"></i> Core Values</h2>
+          <ul style="list-style: none; padding: 0;">
+            <li>✓ <strong>Innovation:</strong> Encouraging creative thinking and experimentation</li>
+            <li>✓ <strong>Collaboration:</strong> Building strong teams and partnerships</li>
+            <li>✓ <strong>Excellence:</strong> Pursuing high standards in all endeavors</li>
+            <li>✓ <strong>Community:</strong> Supporting each other's growth and success</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="about-section" style="background: var(--bg-secondary);">
+      <div class="about-content">
+        <h2 style="text-align: center; margin-bottom: 2rem; font-size: 2rem;"><i class="fa-solid fa-history"></i> Our Journey</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="milestone">2020 - Inception</div>
+            <p>Cluster One was founded with a vision to unite tech enthusiasts at S-VYASA.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="milestone">2021 - First Hackathon</div>
+            <p>Organized our first HackCluster with 200+ participants and 50 teams.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="milestone">2022 - Expansion</div>
+            <p>Launched workshops, tech talks, and expanded to 500+ active members.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="milestone">2023 - Recognition</div>
+            <p>Received Best Technical Club award from college administration.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="milestone">2024 - Digital Transformation</div>
+            <p>Launched OD management system and digital portfolio platform.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="milestone">2025 - Global Vision</div>
+            <p>Expanding partnerships and planning international collaborations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leadership Team -->
+    <section class="about-section">
+      <div class="about-content">
+        <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2rem;"><i class="fa-solid fa-people-group"></i> Leadership Team</h2>
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-avatar">👨‍💼</div>
+            <div class="team-name">Dr. Priya Sharma</div>
+            <div class="team-role">Faculty Coordinator</div>
+            <p style="font-size: 0.85rem; margin-top: 0.5rem; color: var(--text-secondary);">Computer Science Department</p>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar">👩‍💻</div>
+            <div class="team-name">Ananya Gupta</div>
+            <div class="team-role">President</div>
+            <p style="font-size: 0.85rem; margin-top: 0.5rem; color: var(--text-secondary);">CS 2024 Batch</p>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar">👨‍💻</div>
+            <div class="team-name">Aditya Kumar</div>
+            <div class="team-role">Vice President</div>
+            <p style="font-size: 0.85rem; margin-top: 0.5rem; color: var(--text-secondary);">CS 2024 Batch</p>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar">👩‍💼</div>
+            <div class="team-name">Neha Patel</div>
+            <div class="team-role">Events Lead</div>
+            <p style="font-size: 0.85rem; margin-top: 0.5rem; color: var(--text-secondary);">CS 2025 Batch</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="about-section" style="background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));">
+      <div class="about-content" style="color: white; text-align: center;">
+        <h2 style="font-size: 2rem; margin-bottom: 3rem;">By The Numbers</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+          <div>
+            <div style="font-size: 3rem; font-weight: 700;">500+</div>
+            <div style="font-size: 1.1rem; opacity: 0.9;">Active Members</div>
+          </div>
+          <div>
+            <div style="font-size: 3rem; font-weight: 700;">50+</div>
+            <div style="font-size: 1.1rem; opacity: 0.9;">Events Organized</div>
+          </div>
+          <div>
+            <div style="font-size: 3rem; font-weight: 700;">20+</div>
+            <div style="font-size: 1.1rem; opacity: 0.9;">Projects Completed</div>
+          </div>
+          <div>
+            <div style="font-size: 3rem; font-weight: 700;">100%</div>
+            <div style="font-size: 1.1rem; opacity: 0.9;">Placement Rate</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer-slot"></footer>
+  <script src="config/club-config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

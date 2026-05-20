@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — Cluster One</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <style>
+    .contact-section { padding: 4rem 2rem; }
+    .contact-header { text-align: center; margin-bottom: 3rem; }
+    .contact-header h1 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--accent-cyan); }
+    .contact-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .contact-info { display: grid; gap: 2rem; }
+    .contact-card { background: var(--bg-secondary); padding: 2rem; border-radius: 8px; border-left: 4px solid var(--accent-cyan); }
+    .contact-card-icon { font-size: 2rem; color: var(--accent-cyan); margin-bottom: 1rem; }
+    .contact-card-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .contact-card-content { color: var(--text-secondary); line-height: 1.6; }
+    .contact-card a { color: var(--accent-cyan); text-decoration: none; }
+    .contact-card a:hover { text-decoration: underline; }
+    .contact-form { background: var(--bg-secondary); padding: 2rem; border-radius: 8px; }
+    .contact-form-title { font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem; }
+    .form-group { margin-bottom: 1.5rem; }
+    .form-label { display: block; font-weight: 500; margin-bottom: 0.5rem; }
+    .form-input, .form-textarea { width: 100%; padding: 0.8rem; border: 1px solid var(--border-color); border-radius: 6px; font-family: inherit; font-size: 1rem; transition: border-color 0.3s; }
+    .form-input:focus, .form-textarea:focus { outline: none; border-color: var(--accent-cyan); }
+    .form-textarea { resize: vertical; min-height: 150px; }
+    .form-button { width: 100%; padding: 1rem; background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue)); color: white; border: none; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.3s; }
+    .form-button:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0, 128, 255, 0.3); }
+    .social-links { display: flex; gap: 1rem; margin-top: 2rem; }
+    .social-icon { width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; background: var(--bg-primary); border-radius: 50%; font-size: 1.3rem; color: var(--accent-cyan); transition: all 0.3s; cursor: pointer; }
+    .social-icon:hover { background: var(--accent-cyan); color: white; }
+    @media (max-width: 768px) {
+      .contact-container { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header id="header-slot"></header>
+
+  <main>
+    <!-- Contact Hero -->
+    <section class="contact-section" style="background: linear-gradient(135deg, rgba(0, 245, 255, 0.1), rgba(0, 128, 255, 0.1));">
+      <div class="contact-header">
+        <h1><i class="fa-solid fa-envelope"></i> Contact Us</h1>
+        <p style="font-size: 1.1rem; color: var(--text-secondary);">Get in touch with the Cluster One team</p>
+      </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="contact-section">
+      <div class="contact-container">
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <div class="contact-card">
+            <div class="contact-card-icon"><i class="fa-solid fa-map-pin"></i></div>
+            <div class="contact-card-title">Location</div>
+            <div class="contact-card-content">
+              Cluster One Office<br>
+              Computer Science Department<br>
+              S-VYASA University<br>
+              Bangalore, India 560034
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="contact-card-title">Phone</div>
+            <div class="contact-card-content">
+              <a href="tel:+918800000000">+91 8800 000 000</a><br>
+              <a href="tel:+918801111111">+91 8801 111 111</a><br>
+              (Monday - Friday, 10 AM - 5 PM IST)
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div class="contact-card-title">Email</div>
+            <div class="contact-card-content">
+              <a href="mailto:info@clusterone.org">info@clusterone.org</a><br>
+              <a href="mailto:events@clusterone.org">events@clusterone.org</a><br>
+              <a href="mailto:support@clusterone.org">support@clusterone.org</a>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon"><i class="fa-solid fa-clock"></i></div>
+            <div class="contact-card-title">Office Hours</div>
+            <div class="contact-card-content">
+              Monday - Thursday: 3 PM - 6 PM<br>
+              Friday: 2 PM - 5 PM<br>
+              Saturday & Sunday: Closed<br>
+              Holidays: By appointment only
+            </div>
+          </div>
+
+          <div class="contact-card" style="border-left-color: var(--accent-amber);">
+            <div class="contact-card-icon" style="color: var(--accent-amber);"><i class="fa-solid fa-lightbulb"></i></div>
+            <div class="contact-card-title">Follow Us</div>
+            <div class="contact-card-content">
+              Stay updated on our latest events and announcements
+            </div>
+            <div class="social-links">
+              <div class="social-icon" onclick="openSocial('facebook')"><i class="fa-brands fa-facebook"></i></div>
+              <div class="social-icon" onclick="openSocial('twitter')"><i class="fa-brands fa-twitter"></i></div>
+              <div class="social-icon" onclick="openSocial('instagram')"><i class="fa-brands fa-instagram"></i></div>
+              <div class="social-icon" onclick="openSocial('linkedin')"><i class="fa-brands fa-linkedin"></i></div>
+              <div class="social-icon" onclick="openSocial('github')"><i class="fa-brands fa-github"></i></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+          <div class="contact-form-title">Send us a Message</div>
+          <form id="contact-form" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+              <label class="form-label" for="name">Name *</label>
+              <input type="text" id="name" class="form-input" placeholder="Your name" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="email">Email *</label>
+              <input type="email" id="email" class="form-input" placeholder="your@email.com" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="phone">Phone</label>
+              <input type="tel" id="phone" class="form-input" placeholder="+91 98765 43210">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="subject">Subject *</label>
+              <input type="text" id="subject" class="form-input" placeholder="What is this about?" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="category">Category</label>
+              <select id="category" class="form-input" style="cursor: pointer;">
+                <option value="">Select a category</option>
+                <option value="general">General Inquiry</option>
+                <option value="event">Event Inquiry</option>
+                <option value="membership">Membership</option>
+                <option value="partnership">Partnership</option>
+                <option value="feedback">Feedback</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="message">Message *</label>
+              <textarea id="message" class="form-textarea" placeholder="Tell us more about your inquiry..." required></textarea>
+            </div>
+
+            <button type="submit" class="form-button">
+              <i class="fa-solid fa-paper-plane"></i> Send Message
+            </button>
+
+            <div id="form-status" style="margin-top: 1rem; padding: 1rem; border-radius: 6px; display: none;"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="contact-section" style="background: var(--bg-secondary);">
+      <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 2rem;">Find Us on Campus</h2>
+        <div style="width: 100%; height: 400px; background: linear-gradient(135deg, rgba(0, 245, 255, 0.2), rgba(0, 128, 255, 0.2)); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+          <div style="text-align: center;">
+            <i class="fa-solid fa-map" style="font-size: 3rem; color: var(--accent-cyan); opacity: 0.5;"></i>
+            <p style="margin-top: 1rem; color: var(--text-secondary);">Map view would be displayed here</p>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">Computer Science Building, 3rd Floor</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer-slot"></footer>
+
+  <script src="config/club-config.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('contact-form');
+      const status = document.getElementById('form-status');
+      
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+
+      status.style.display = 'block';
+      status.style.background = 'linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 200, 100, 0.1))';
+      status.style.borderLeft = '4px solid #00ff88';
+      status.style.color = '#00ff88';
+      status.innerHTML = '<i class="fa-solid fa-check"></i> Message sent successfully! We\'ll get back to you soon.';
+
+      form.reset();
+      setTimeout(() => {
+        status.style.display = 'none';
+      }, 5000);
+    }
+
+    function openSocial(platform) {
+      const links = {
+        facebook: 'https://facebook.com',
+        twitter: 'https://twitter.com',
+        instagram: 'https://instagram.com',
+        linkedin: 'https://linkedin.com',
+        github: 'https://github.com'
+      };
+      alert(`Following ${platform} - ${links[platform]}`);
+    }
+  </script>
+</body>
+</html>

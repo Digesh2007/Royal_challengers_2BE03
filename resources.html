@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resources — Cluster One</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <style>
+    .resources-section { padding: 4rem 2rem; }
+    .resources-header { text-align: center; margin-bottom: 3rem; }
+    .resources-header h1 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--accent-cyan); }
+    .resources-container { max-width: 1200px; margin: 0 auto; }
+    .resource-card { background: var(--bg-secondary); border-left: 4px solid var(--accent-cyan); padding: 2rem; border-radius: 8px; margin-bottom: 2rem; transition: all 0.3s; }
+    .resource-card:hover { transform: translateX(8px); box-shadow: 0 4px 12px rgba(0, 245, 255, 0.2); }
+    .resource-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+    .resource-icon { font-size: 2rem; color: var(--accent-cyan); }
+    .resource-title { font-size: 1.3rem; font-weight: 600; }
+    .resource-desc { color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6; }
+    .resource-items { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+    .resource-item { background: var(--bg-primary); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-color); transition: all 0.3s; }
+    .resource-item:hover { border-color: var(--accent-cyan); background: linear-gradient(135deg, rgba(0, 245, 255, 0.05), rgba(0, 128, 255, 0.05)); }
+    .resource-item-title { font-weight: 600; margin-bottom: 0.5rem; }
+    .resource-item-meta { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem; }
+    .resource-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1rem; background: var(--accent-cyan); color: white; text-decoration: none; border-radius: 4px; transition: all 0.3s; border: none; cursor: pointer; font-size: 0.9rem; }
+    .resource-btn:hover { background: var(--accent-blue); }
+    .category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
+  </style>
+</head>
+<body>
+  <header id="header-slot"></header>
+
+  <main>
+    <!-- Resources Hero -->
+    <section class="resources-section" style="background: linear-gradient(135deg, rgba(0, 245, 255, 0.1), rgba(0, 128, 255, 0.1));">
+      <div class="resources-header">
+        <h1><i class="fa-solid fa-book"></i> Resources & Materials</h1>
+        <p style="font-size: 1.1rem; color: var(--text-secondary);">Learning materials, guides, and tools from our community</p>
+      </div>
+    </section>
+
+    <!-- Resources Content -->
+    <section class="resources-section">
+      <div class="resources-container">
+        <!-- Learning Resources -->
+        <div class="resource-card">
+          <div class="resource-header">
+            <i class="resource-icon fa-solid fa-graduation-cap"></i>
+            <div class="resource-title">Learning Pathways</div>
+          </div>
+          <div class="resource-desc">
+            Curated learning paths for different technologies and skill levels. These guides were created by our expert members and cover basics to advanced topics.
+          </div>
+          <div class="resource-items">
+            <div class="resource-item">
+              <div class="resource-item-title">Web Development</div>
+              <div class="resource-item-meta">HTML, CSS, JavaScript, React</div>
+              <button class="resource-btn" onclick="downloadResource('web-dev-path')">
+                <i class="fa-solid fa-download"></i> Download
+              </button>
+            </div>
+            <div class="resource-item">
+              <div class="resource-item-title">Python Basics</div>
+              <div class="resource-item-meta">Beginner Friendly • 4 weeks</div>
+              <button class="resource-btn" onclick="downloadResource('python-guide')">
+                <i class="fa-solid fa-download"></i> Download
+              </button>
+            </div>
+            <div class="resource-item">
+              <div class="resource-item-title">Data Science 101</div>
+              <div class="resource-item-meta">NumPy, Pandas, Matplotlib</div>
+              <button class="resource-btn" onclick="downloadResource('ds-guide')">
+                <i class="fa-solid fa-download"></i> Download
+              </button>
+            </div>
+            <div class="resource-item">
+              <div class="resource-item-title">Cloud Computing</div>
+              <div class="resource-item-meta">AWS, Azure, GCP Basics</div>
+              <button class="resource-btn" onclick="downloadResource('cloud-guide')">
+                <i class="fa-solid fa-download"></i> Download
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Workshop Materials -->
+        <div class="resource-card">
+          <div class="resource-header">
+            <i class="resource-icon fa-solid fa-presentation"></i>
+            <div class="resource-title">Workshop Slides & Code</div>
+          </div>
+          <div class="resource-desc">
+            Access presentation slides, sample code, and projects from our past workshops. All materials are freely available for learning and reference.
+          </div>
+          <div class="resource-items">
+            <div class="resource-item">
+              <div class="resource-item-title">API Design Workshop</div>
+              <div class="resource-item-meta">Nov 2024 • RESTful APIs</div>
+              <button class="resource-btn" onclick="downloadResource('api-workshop')">
+                <i class="fa-solid fa-download"></i> Materials
+              </button>
+            </div>
+            <div class="resource-item">
+              <div class="resource-item-title">Mobile Development</div>
+              <div class="resource-item-meta">Oct 2024 • React Native</div>
+              <button class="resource-btn" onclick="downloadResource('mobile-workshop')">
+                <i class="fa-solid fa-download"></i> Materials
+              </button>
+            </div>
+            <div class="resource-item">
+              <div class="resource-item-title">Database Design</div>
+              <div class="resource-item-meta">Sep 2024 • SQL & NoSQL</div>
+              <button class="resource-btn" onclick="downloadResource('db-workshop')">
+                <i class="fa-solid fa-download"></i> Materials
+              </button>
+            </div>
+            <div class="resource-item">
+              <div class="resource-item-title">DevOps Essentials</div>
+              <div class="resource-item-meta">Aug 2024 • CI/CD Pipelines</div>
+              <button class="resource-btn" onclick="downloadResource('devops-workshop')">
+                <i class="fa-solid fa-download"></i> Materials
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Documentation & Guides -->
+        <div class="resource-card">
+          <div class="resource-header">
+            <i class="resource-icon fa-solid fa-file-lines"></i>
+            <div class="resource-title">Documentation & How-To Guides</div>
+          </div>
+          <div class="resource-desc">
+            Step-by-step guides for common tasks, project setups, and troubleshooting. Written to help you get started quickly.
+          </div>
+          <div class="resource-items">
+            <div class="resource-item">
+              <div class="resource-item-title">Git & GitHub Basics</div>
+              <div class="resource-item-meta">Version Control Fundamentals</div>
+              <button class="resource-btn" onclick="downloadResource('git-guide')">
+                <i class="fa-solid fa-download"></i> Read
+              </button>
+            </div>
+            <div class="resource-item">
+              <div class="resource-item-title">Project Setup Guide</div>
+              <div class="resource-item-meta">MERN Stack Setup</div>
+              <button class="resource-btn" onclick="downloadResource('project-setup')">
+                <i class="fa-solid fa-download"></i> Read
+              </button>
+            </div>
+            <div class="resource-item">
+              <div class="resource-item-title">Coding Best Practices</div>
+              <div class="resource-item-meta">Style Guide & Standards</div>
+              <button class="resource-btn" onclick="downloadResource('best-practices')">
+                <i class="fa-solid fa-download"></i> Read
+              </button>
+            </div>
+            <div class="resource-item">
+              <div class="resource-item-title">Deployment Checklist</div>
+              <div class="resource-item-meta">Going Live Successfully</div>
+              <button class="resource-btn" onclick="downloadResource('deployment')">
+                <i class="fa-solid fa-download"></i> Read
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Templates & Tools -->
+        <div class="resource-card">
+          <div class="resource-header">
+            <i class="resource-icon fa-solid fa-toolbox"></i>
+            <div class="resource-title">Templates & Tools</div>
+          </div>
+          <div class="resource-desc">
+            Ready-to-use templates, boilerplates, and utility tools to accelerate your development process.
+          </div>
+          <div class="resource-items">
+            <div class="resource-item">
+              <div class="resource-item-title">React Component Kit</div>
+              <div class="resource-item-meta">Reusable Components</div>
+              <button class="resource-btn" onclick="downloadResource('react-kit')">
+                <i class="fa-solid fa-download"></i> Download
+              </button>
+            </div>
+            <div class="resource-item">
+              <div class="resource-item-title">UI/UX Template</div>
+              <div class="resource-item-meta">Figma File • Modern Design</div>
+              <button class="resource-btn" onclick="downloadResource('ui-template')">
+                <i class="fa-solid fa-download"></i> Download
+              </button>
+            </div>
+            <div class="resource-item">
+              <div class="resource-item-title">Project Boilerplate</div>
+              <div class="resource-item-meta">Full Stack Ready</div>
+              <button class="resource-btn" onclick="downloadResource('boilerplate')">
+                <i class="fa-solid fa-download"></i> Download
+              </button>
+            </div>
+            <div class="resource-item">
+              <div class="resource-item-title">Code Snippets</div>
+              <div class="resource-item-meta">100+ Useful Snippets</div>
+              <button class="resource-btn" onclick="downloadResource('snippets')">
+                <i class="fa-solid fa-download"></i> Download
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recommended Books & Articles -->
+        <div class="resource-card">
+          <div class="resource-header">
+            <i class="resource-icon fa-solid fa-book-open"></i>
+            <div class="resource-title">Recommended Reading</div>
+          </div>
+          <div class="resource-desc">
+            Curated list of books, articles, and online resources recommended by our members.
+          </div>
+          <div class="resource-items">
+            <div class="resource-item">
+              <div class="resource-item-title">Clean Code</div>
+              <div class="resource-item-meta">Robert C. Martin • Classic</div>
+              <button class="resource-btn" onclick="openLink('https://example.com')">
+                <i class="fa-solid fa-external-link"></i> Link
+              </button>
+            </div>
+            <div class="resource-item">
+              <div class="resource-item-title">Designing Data Intensive Applications</div>
+              <div class="resource-item-meta">Martin Kleppmann • Advanced</div>
+              <button class="resource-btn" onclick="openLink('https://example.com')">
+                <i class="fa-solid fa-external-link"></i> Link
+              </button>
+            </div>
+            <div class="resource-item">
+              <div class="resource-item-title">You Don't Know JS</div>
+              <div class="resource-item-meta">Kyle Simpson • JavaScript Deep Dive</div>
+              <button class="resource-btn" onclick="openLink('https://example.com')">
+                <i class="fa-solid fa-external-link"></i> Link
+              </button>
+            </div>
+            <div class="resource-item">
+              <div class="resource-item-title">System Design Interview</div>
+              <div class="resource-item-meta">Alex Xu • Preparation Guide</div>
+              <button class="resource-btn" onclick="openLink('https://example.com')">
+                <i class="fa-solid fa-external-link"></i> Link
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contribute Section -->
+        <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, rgba(0, 245, 255, 0.1), rgba(0, 128, 255, 0.1)); border-radius: 8px; border-left: 4px solid var(--accent-cyan);">
+          <h3 style="font-size: 1.3rem; margin-bottom: 1rem;"><i class="fa-solid fa-lightbulb"></i> Want to Contribute?</h3>
+          <p style="margin-bottom: 1.5rem;">Have learning materials or resources you'd like to share with the community?</p>
+          <a href="contact.html" style="display: inline-block; padding: 0.8rem 2rem; background: var(--accent-cyan); color: white; text-decoration: none; border-radius: 6px; font-weight: 600;">Submit Your Resource</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer-slot"></footer>
+
+  <script src="config/club-config.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    function downloadResource(resourceId) {
+      alert(`Downloading: ${resourceId}.pdf\n\nThis is a demo. In production, this would download the actual file.`);
+      console.log('Download initiated for:', resourceId);
+    }
+
+    function openLink(url) {
+      alert(`Opening external resource...\n\nLink: ${url}`);
+    }
+  </script>
+</body>
+</html>
